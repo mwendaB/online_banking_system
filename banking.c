@@ -149,7 +149,7 @@ int main()
 				}
             }
             else{
-                printf("invalid password")
+                printf("Invalid Password");
             }
 
                     
