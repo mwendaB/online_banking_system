@@ -22,3 +22,25 @@ int main(){
 
     printf("\n\nYour choice:\t");
     scanf("%d",&opt);
+
+    if(opt == 1){
+        system("clear");
+        printf("Enter your account number:\t");
+        scanf("%s",usr.ac);
+        printf("Enter your phone number:\t");
+        scanf("%s",usr.phone);
+        printf("Enter your new password:\t");
+        scanf("%s",usr.password);
+        usr.balance = 0;
+        strcpy(filename,usr.phone);
+        fp = fopen(strcat(filename,".dat"),"w");
+        fwrite(&usr,sizeof(struct user),1,fp);
+        if(fwrite != 0){
+            printf("\n\nAccount succesfully registered");
+        }else {
+            printf("\n\nSomething went wrong please try again");
+        }
+        fclose(fp);
+    }
+
+    
