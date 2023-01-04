@@ -78,4 +78,19 @@ int main()
 						fclose(fp);
 						break;
 
+                    case 3:
+						system("clear");
+						printf("Enter withdrawl amount:\t");
+						scanf("%d",&amount);
+						if(amount % 500 != 0) printf("\nSorry amount should be multiple of 500");
+						else if(amount>user.balance) printf("\nSorry insufficeint balance");
+						else {
+							user.balance -= amount;
+						fp = fopen(phone,"w");
+						fwrite(&user,sizeof(struct user),1,fp);
+						if(fwrite !=0) printf("\n\nYou have withdrawn Rs.%d",amount);
+						fclose(fp);
+						}
+						break;
+
 }
