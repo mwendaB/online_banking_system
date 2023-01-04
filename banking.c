@@ -147,6 +147,10 @@ int main()
                 printf("\n\nDo you want to continue?[y/n]:\t");
 				scanf("%s",&cont);
 				}
+            }
+            else{
+                printf("invalid password")
+            }
 
                     
 
