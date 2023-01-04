@@ -23,4 +23,7 @@ int main()
 	printf("\n\n1.Register your account");
 	printf("\n2.Login to your account");
 
+    printf("\n\nPlease enter your choice:\t");
+	scanf("%d",&opt);
+
 }
