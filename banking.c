@@ -92,5 +92,42 @@ int main()
 						fclose(fp);
 						}
 						break;
+                    
+                    case 4:
+						printf("Please enter the phone number to trasnfer balance:\t");
+						scanf("%s",phone);
+						printf("Enter the amount to transfer:\t");
+						scanf("%d",&amount);
+						if(amount > user.balance) printf("\nSorry insufficent balance");
+						else {
+							fptr = fopen(strcat(phone,".dat"),"r");
+							if(fptr==NULL) printf("Sorry number is not registered");
+							else {
+								fread(&usr,sizeof(struct user),1,fptr);
+								fclose(fptr);
+							
+								usr.balance += amount;
+								
+								fptr = fopen(phone,"w");
+								fwrite(&usr,sizeof(struct user),1,fptr);
+								if(fwrite != 0){
+								// 	printf("ACcount:%s",usr.ac);
+								// printf("\npassword%s",usr.password);
+								// printf("\nphone%s",usr.phone);
+								// printf("\nbalance%f",usr.balance);
+									printf("Your trasfer is completed. You have trasnfered Rs.%d to %s",amount,usr.phone);
+									fclose(fptr);
+									user.balance -= amount;
+									strcpy(filename,user.phone);
+									fp = fopen(strcat(filename,".dat"),"w");
+									fwrite(&user,sizeof(struct user),1,fp);
+									fclose(fp);
+								}
+							}
+						}
+						break;
+                    
+
+                    
 
 }
