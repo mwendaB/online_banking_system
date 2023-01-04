@@ -42,5 +42,16 @@ int main(){
         }
         fclose(fp);
     }
+    if(opt == 2){
+        system("clear");
+        printf("\nPhone number:\t");
+        scanf("%s",phone);
+        printf("Password:\t");
+        scanf("%s",pword);
+        strcpy(filename,phone);
+        fp = fopen(strcat(filename,".dat"),"r");
+        if(fp == NULL){
+            printf("\nAccount number not registered");
+        }
 
     
