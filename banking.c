@@ -10,3 +10,10 @@ struct user
     char password[50];
     float balance;
 };
+
+int main()
+{
+    struct user user,usr;
+    char filename[50],phone[50],password[50],phone2[50];
+    
+}
