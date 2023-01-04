@@ -126,6 +126,24 @@ int main()
 							}
 						}
 						break;
+                    case 5:
+						printf("\n\nPlease enter your old password:\t");
+						scanf("%s",password);
+						if(!strcmp(password,user.password)){
+							printf("\n\nPlease enter your new password:\t");
+							scanf("%s",password);
+							strcpy(user.password,password);
+							strcpy(filename,user.phone);
+							fp = fopen(strcat(filename,".dat"),"w");
+							fwrite(&user,sizeof(struct user),1,fp);
+							fclose(fp);	
+							printf("\nPassword succesfullly changed");
+						}else printf("\nSorry your password is wrong");
+					
+					default:
+					break;
+				}
+                //switch ends here
                     
 
                     
