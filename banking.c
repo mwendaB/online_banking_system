@@ -151,7 +151,10 @@ int main()
             else{
                 printf("Invalid Password");
             }
+        }
+        printf("\n\n***Thank you for banking with US. bank***\n\n");
+    }
 
-                    
-
+    return 0;
+    
 }
