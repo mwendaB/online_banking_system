@@ -25,5 +25,21 @@ int main()
 
     printf("\n\nPlease enter your choice:\t");
 	scanf("%d",&opt);
+    if(opt == 1){
+		system("clear");
+		printf("\nEnter your account number:\t");
+		scanf("%s",user.ac);
+		printf("Enter your phone number:\t");
+		scanf("%s",user.phone);
+		printf("Enter your new password:\t");
+		scanf("%s",user.password);
+		user.balance=0;
+		stpcpy(filename,user.phone);
+		fp=fopen(strcat(filename,".dat"),"w");
+		fwrite(&user,sizeof(user),1,fp);
+		if(fwrite != 0){
+			printf("Succesfully registered");
+		}
+	}
 
 }
