@@ -63,5 +63,19 @@ int main()
 				printf("\nPress 5 for changing password\n\n");
 				scanf("%d",&choice);
 				switch(choice){
+                    case 1:
+						printf("Your current balance is Rs. %.2f",user.balance);
+						break;
+
+					case 2:
+						system("clear");
+						printf("Enter amount to be added:\t");
+						scanf("%d",&amount);
+						user.balance += amount;
+						fp = fopen(phone,"w");
+						fwrite(&user,sizeof(struct user),1,fp);
+						if(fwrite !=0) printf("\n\nYou have depostied Rs.%d",amount);
+						fclose(fp);
+						break;
 
 }
