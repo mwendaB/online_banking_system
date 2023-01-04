@@ -50,5 +50,18 @@ int main()
 		fp = fopen(strcat(phone,".dat"),"r");
 		if(fp == NULL) printf("Account number not registered");
 		else {
+            fread(&user,sizeof(struct user),1,fp);
+			fclose(fp);
+			if(!strcmp(password,user.password)){
+				while(cont == 'y'){
+				system("clear");
+				printf("\n\tWelcome %s",user.phone);
+				printf("\nPress 1 for balance inquiry");
+				printf("\nPress 2 for adding fund");
+				printf("\nPress 3 for cash withdraw");
+				printf("\nPress 4 for online transfer");
+				printf("\nPress 5 for changing password\n\n");
+				scanf("%d",&choice);
+				switch(choice){
 
 }
